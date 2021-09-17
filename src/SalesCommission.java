@@ -16,12 +16,53 @@ Total Sales: $65,000.00
 
 Total Earnings: $1184.38
 
+1.Get input-(hourly rate,hours worked,commission percent, total sales)
+2.calculate pay before commission earnings
+3.Find commission earnings
+4.add commission earnings to final
+5.output results rounded two spaces
  */
+
+import javax.swing.*;
+import java.text.DecimalFormat;
 
 public class SalesCommission {
 
     public static void main(String[] args) {
+double payRate=Double.parseDouble(JOptionPane.showInputDialog("What is your pay rate?"));
+double hoursWork=Double.parseDouble(JOptionPane.showInputDialog("How many hours did you work?"));
+double commission=Double.parseDouble(JOptionPane.showInputDialog("What is your commission percent?"));
+double salesTotal=Double.parseDouble(JOptionPane.showInputDialog("What was your sales total?"));
+
+displayResults();
+
+    totalProf1(payRate,hoursWork);
+    commE(commission,salesTotal,payRate);
+    }
+
+
+
+    public static double totalProf1(double payRate, double hoursWork) {
+       double totalProf1=payRate * hoursWork;
+       return  totalProf1;
+
 
     }
 
+    public  static double commE(double salesTotal, double commission, double payRate) {
+    double commcon= salesTotal*commission/100;
+    double commE= commcon+totalProf1;
+    return commE ;
+
+    }
+
+
+    public static void displayResults(){
+    DecimalFormat round = new DecimalFormat("#,###.00");
+    JOptionPane.showMessageDialog(null, "Your total earnings are "+Math.round(0));
+
+    System.exit(0);
+
+
+    }
 }
